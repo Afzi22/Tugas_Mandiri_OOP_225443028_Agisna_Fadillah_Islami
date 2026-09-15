@@ -1,13 +1,11 @@
 package perpustakaan
 
 fun main() {
-    // 1. Inisialisasi
     println("==================================================")
     println("1. INISIALISASI PERPUSTAKAAN")
     println("==================================================")
     val library = Library("Perpustakaan Kampus")
 
-    // 2. Tambah Item
     println("\n==================================================")
     println("2. TAMBAH ITEM")
     println("==================================================")
@@ -22,7 +20,6 @@ fun main() {
 
     library.addItems(book1, book2, journal1, journal2, dvd1, dvd2)
 
-    // 3. Registrasi Anggota
     println("\n==================================================")
     println("3. REGISTRASI ANGGOTA")
     println("==================================================")
@@ -30,28 +27,24 @@ fun main() {
     library.registerMember("M002", "Dewi Lestari", "dewi@email.com", "08129876543")
     library.registerMember("M003", "Rizky Pratama", "rizky@email.com", "08125678901")
 
-    // 4. Tampilkan Semua Item
     println("\n==================================================")
     println("4. TAMPILKAN SEMUA ITEM")
     println("==================================================")
     library.displayAllItems()
 
-    // 5. Peminjaman (Skenario A)
     println("\n==================================================")
     println("5. PEMINJAMAN (SKENARIO A)")
     println("==================================================")
-    library.borrowItem("M001", "B001") // Ahmad meminjam "Pemrograman Kotlin"
-    library.borrowItem("M001", "D001") // Ahmad meminjam "Inception"
-    library.borrowItem("M002", "J001") // Dewi meminjam "Jurnal Teknologi Informasi"
-    library.borrowItem("M003", "B002") // Rizky meminjam "Dasar-Dasar OOP"
+    library.borrowItem("M001", "B001")
+    library.borrowItem("M001", "D001")
+    library.borrowItem("M002", "J001")
+    library.borrowItem("M003", "B002")
 
-    // 6. Tampilkan Item Tersedia
     println("\n==================================================")
     println("6. TAMPILKAN ITEM TERSEDIA")
     println("==================================================")
     library.displayAvailableItems()
 
-    // 7. Tampilkan Transaksi Anggota
     println("\n==================================================")
     println("7. TAMPILKAN TRANSAKSI ANGGOTA")
     println("==================================================")
@@ -61,21 +54,18 @@ fun main() {
     ahmad?.displayTransactions()
     dewi?.displayTransactions()
 
-    // 8. Pengembalian (Skenario B)
     println("\n==================================================")
     println("8. PENGEMBALIAN (SKENARIO B)")
     println("==================================================")
     library.returnItem("M001", "B001", daysLate = 0)
     library.returnItem("M002", "J001", daysLate = 3)
 
-    // 9. Tampilkan Transaksi Setelah Pengembalian
     println("\n==================================================")
     println("9. TAMPILKAN TRANSAKSI SETELAH PENGEMBALIAN")
     println("==================================================")
     ahmad?.displayTransactions()
     dewi?.displayTransactions()
 
-    // 10. Demonstrasi Polimorfisme
     println("\n==================================================")
     println("10. DEMONSTRASI POLIMORFISME")
     println("==================================================")
@@ -84,7 +74,6 @@ fun main() {
         println("${item.getItemType()} - Denda/hari: Rp ${item.calculateFinePerDay().toInt()}")
     }
 
-    // 11. Demonstrasi Sealed Class
     println("\n==================================================")
     println("11. DEMONSTRASI SEALED CLASS")
     println("==================================================")
@@ -105,7 +94,6 @@ fun main() {
         println(output)
     }
 
-    // 12. Demonstrasi Smart Casting
     println("\n==================================================")
     println("12. DEMONSTRASI SMART CASTING")
     println("==================================================")
@@ -122,7 +110,6 @@ fun main() {
         println("Hasil casting '${targetItem.title}' ke DVD: $dvdCast")
     }
 
-    // 13. Demonstrasi Enkapsulasi
     println("\n==================================================")
     println("13. DEMONSTRASI ENKAPSULASI")
     println("==================================================")
@@ -130,7 +117,6 @@ fun main() {
     println("1. Properti 'isAvailable' pada Item tidak bisa diubah langsung dari luar (private set).")
     println("2. Properti 'email' pada Member tidak bisa diakses langsung dari luar (private val). Akses wajib melalui getter: '${ahmad?.getEmail()}'")
 
-    // 14. Tampilkan Laporan Akhir
     println("\n==================================================")
     println("14. TAMPILKAN LAPORAN AKHIR")
     println("==================================================")
